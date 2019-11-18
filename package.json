@@ -1,0 +1,35 @@
+{
+  "name": "b-webpack",
+  "version": "1.0.0",
+  "description": "webpack optimize ast plugin loader",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Been101/B-Webpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "optimze",
+    "ast",
+    "plugin",
+    "loader"
+  ],
+  "author": "Been",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Been101/B-Webpack/issues"
+  },
+  "homepage": "https://github.com/Been101/B-Webpack#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10"
+  }
+}
