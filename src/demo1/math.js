@@ -1,6 +1,6 @@
 export function square(x) {
 
-  return x * x + 2365;
+  return x * x;
 }
 
 export function cube(x) {
