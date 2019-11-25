@@ -1,8 +1,9 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const WebpackDeepScopePlugin = require('webpack-deep-scope-plugin').default
 const HelloWorld = require('hello-world')
-const webpack = require('webpack')
 const path = require('path')
+const UglifyJSplugin = require('uglifyjs-webpack-plugin')
+const webpack = require('webpack')
 
 console.log(__dirname)
 module.exports = {
@@ -12,9 +13,6 @@ module.exports = {
   //   filename: 'bundle.js' // default value ---> dist/main.js
   // },
   mode: 'development',
-  optimization: {
-    usedExports: true
-  },
   module: {
     rules: [
       {
@@ -31,5 +29,12 @@ module.exports = {
       }
     ]
   },
-  plugins: []
+  plugins: [
+    new WebpackDeepScopePlugin(),
+    new UglifyJSplugin({
+      cache: true,//启用缓存
+      parallel: true,// 使用多进程运行改进编译速度
+      sourceMap: true//生成sourceMap映射文件
+    })
+  ]
 }

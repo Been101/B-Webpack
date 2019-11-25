@@ -1,7 +1,7 @@
 import { cube } from './math.js';
 import './css/index.css'
-// import { join } from 'lodash'
-import join from 'lodash/join'
+// // import { join } from 'lodash'
+// import join from 'lodash/join'
 
 function component() {
   var element = document.createElement('pre');

@@ -1,30 +1,19 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const WebpackDeepScopePlugin = require('webpack-deep-scope-plugin').default
-const HelloWorld = require('hello-world')
-const webpack = require('webpack')
+const merge = require('webpack-merge')
 const path = require('path')
+const demo = process.argv[4] || process.argv[3]
 
+const demoConfig = require(`./src/${demo}/webpack.config.js`)
 
-module.exports = {
-  mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.(html)$/,
-        use: {
-          loader: 'html-loader'
-        }
-      }
-    ]
+module.exports = merge({
+  entry: `./src/${demo}/index.js`,
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js' // default value ---> dist/main.js
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    hot: true
-  },
-  plugins: [
-    // new WebpackDeepScopePlugin(),
-    // new BundleAnalyzerPlugin(),
-    new HelloWorld(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
-}
+    host: 'localhost',
+    compress: true,
+    port: process.env.PORT || 8080
+  }
+}, demoConfig)

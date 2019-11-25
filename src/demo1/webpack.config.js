@@ -1,4 +1,4 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const WebpackBundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const WebpackDeepScopePlugin = require('webpack-deep-scope-plugin').default
 const HelloWorld = require('hello-world')
 const webpack = require('webpack')
@@ -16,5 +16,9 @@ module.exports = {
   module: {
     rules: []
   },
-  plugins: []
+  plugins: [
+    new WebpackBundleAnalyzerPlugin({
+      analyzerMode: 'static'
+    })
+  ]
 }

@@ -1,14 +1,9 @@
-function square(x) {
+export function square(x) {
   console.log('*****square******')
   return x * x;
 }
 
-function cube(x) {
+export function cube(x) {
   console.log('this is cube')
   return x * x * x;
 }
-
-module.exports = {
-  square,
-  cube
-} 
