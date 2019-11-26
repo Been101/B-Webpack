@@ -30,6 +30,10 @@ module.exports = {
     ]
   },
   plugins: [
+    // new BundleAnalyzerPlugin({
+    //   server: 'static'
+    // }),
+    new webpack.HotModuleReplacementPlugin(),
     new WebpackDeepScopePlugin(),
     new UglifyJSplugin({
       cache: true,//启用缓存
