@@ -1,11 +1,10 @@
 const aa = require('loader-utils')
 const validateOptions = require('schema-utils')
-console.log(aa)
-console.log(validateOptions)
-
 
 
 module.exports = source => {
+  console.log(this.context)
+  console.log(this)
   console.log('---->', source, '<----')
-  return source
+  return JSON.stringify(source)
 }
