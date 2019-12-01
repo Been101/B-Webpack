@@ -7,7 +7,7 @@ function component() {
   element.innerHTML = ([
     'Hello webpack!',
     '5 cubed is equal ' + cube(5)
-  ]).join('***')
+  ]).join('**00000000000000*')
 
   return element;
 }
