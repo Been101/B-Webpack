@@ -2,6 +2,7 @@
 const path = require('path')
 const HelloPlugin = require('./plugins/HelloPlugin.js')
 const EmitPlugin = require('./plugins/EmitPlugin.js')
+const FilePlugin = require('./plugins/FilePlugin.js')
 
 
 module.exports = {
@@ -39,6 +40,9 @@ module.exports = {
     new HelloPlugin({
       name: 'been'
     }),
-    new EmitPlugin()
+    new EmitPlugin(),
+    new FilePlugin({
+      filename: 'files-list.md'
+    })
   ]
 }
