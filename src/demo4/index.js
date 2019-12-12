@@ -1,16 +1,12 @@
 import { cube } from './math.js';
-import './css/index.css'
-import { join } from 'lodash'
-const _ = require('lodash')
-// import join from 'lodash/join'
+// import './css/index.css'
+// import { join } from 'lodash/join'
+// import join from 'lodash-es/join'
 
 function component() {
   var element = document.createElement('pre');
-  element.innerHTML = join([
-    'Hello webpack!',
-    '5 cubed is equal ' + cube(5)
-  ], '********')
 
+  cube(5)
   return element;
 }
 
