@@ -23,3 +23,11 @@ write a loader
 ## demo6
 
 write a plugin
+
+## demo8
+
+common chunks
+
+## demo9
+
+lazy load
